@@ -1,21 +1,35 @@
-public class NestedTryCatch{
-    public static void main(String[] args){
+public class Main{
+    public static void main(String[] arg){
         try{
-            System.out.println("outer try block");
-            try{
-                System.out.println("inner try block");
-                int[] arr={10,20,30};
-                System.out.println(arr[5]);
-            }
-            catch(ArrayIndexOutOfBoundsException e){
-                System.out.println("inner catch, index out of bounds");
-            }
-            int ans=46/0;
-            System.out.println(ans);
+            int a=10;
+            int b=0;
+            int result=a/b;
+            System.out.println(result);
         }
         catch(ArithmeticException e){
-            System.out.println("outer catch, division by zero error");
+            System.out("cannot divide by zero");
         }
-        System.out.println("rest of the code");
+        try{
+            String name=null;;
+            System.out.println(name.length());
+        }
+        catch(NullPointerException e){
+            System.out.println("string is null");
+        }
+        try{
+            int[] numbers={10,20,30};
+            System.out.println(numbers[5]);
+        }
+        catch(ArrayIndexOutOfBoundsException e){
+            System.out.println("invalid aray index");
+        }
+        try{
+            String value="ac";
+            int number=Integer.parseInt(value);
+            System.out.println(number);
+        }
+        catch(NumberFormatException e){
+            System.out.println("cannot convert string to number");
+        }
     }
 }
